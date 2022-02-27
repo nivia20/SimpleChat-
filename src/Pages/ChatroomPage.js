@@ -23,6 +23,7 @@ const ChatroomPage = ({ match, socket }) => {
     if (token) {
       const payload = JSON.parse(atob(token.split(".")[1]));
       setUserId(payload.id);
+      
     }
     if (socket) {
       socket.on("newMessage", (message) => {

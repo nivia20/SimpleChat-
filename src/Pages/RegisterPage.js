@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
 import makeToast from "../Toaster";
+import { useHistory } from "react-router-dom";
 
 const RegisterPage = (props) => {
   const nameRef = React.createRef();
   const emailRef = React.createRef();
   const passwordRef = React.createRef();
+let history = useHistory();
 
   const registerUser = (props) => {
     const name = nameRef.current.value;
@@ -20,7 +22,10 @@ const RegisterPage = (props) => {
       })
       .then((response) => {
         makeToast("success", response.data.message);
-        props.history.push("/login");
+        console.log("history",(props.history))
+        
+        
+      history.push("/login");
       })
       .catch((err) => {
         // console.log(err);

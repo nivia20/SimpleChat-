@@ -22,7 +22,7 @@ const DashboardPage = (props) => {
   React.useEffect(() => {
     getChatrooms();
     // eslint-disable-next-line
-  }, []);
+  }, [props]);
 
   return (
     <div className="card">
@@ -38,7 +38,10 @@ const DashboardPage = (props) => {
           />
         </div>
       </div>
-      <button>Create Chatroom</button>
+      
+      <button >Create Chatroom</button>
+           
+      
       <div className="chatrooms">
         {chatrooms.map((chatroom) => (
           <div key={chatroom._id} className="chatroom">
